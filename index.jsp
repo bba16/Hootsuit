@@ -2,13 +2,15 @@
 <%@ page import="java.util.*" %>
 <%@ page language="java" contentType="text/html; charset=utf-8"  
 pageEncoding="utf-8" %>
- 
-<html>
+ <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
 <head>
 <link rel="stylesheet" href="hootSuite.css" />
 <title>Phone Book</title>
 </head>
-<body>
+<body style="color:black;">
+
 <% 
 	String action = request.getParameter("action");
 	if (action == null) {
@@ -19,14 +21,34 @@ pageEncoding="utf-8" %>
 <%
 	} else if (action.equals("req_add")) {
 		%>
-		<form>
+		 <form>
+		<div class="well form-inline" style="background-color:rgba(245, 245, 245, 0); margin-bottom:0px;">
+		  <div class="control-group" >  
+           
+            <div class="controls">  
+              <input style ="margin:0px 10px 10px 80px;width: 468px; color:black; " placeholder="Enter Name" size="140" type="text" name="name"/>  
+              </div> 
+			 <span class="countdown"></span> 
+            <div class="control">  
+              <input style="margin:0px 10px 10px 80px;width: 468px;" class="message input-xlarge" placeholder="Enter Phone Number " name="phone" />  
+            </div> 	
+			<div class="controls">  
+              <input style ="margin:0px 10px 10px 80px;width: 468px; color:black; " placeholder="Twitter URL" size="140" type="text" name="twitter"/>  
+              </div>			
+          </div>
+          	<input type="hidden" name= "action" value="add">
+          <input type="submit"/>	
+          	<a href="/phone/index.jsp">Go Back</a>	
+</div>
+</form> 
+		<!-- <form>
 		Name <input type="text" name="name"/></br>
 		Phone <input type="text" name="phone"/></br>
 		Twitter <input type="text" name="twitter"/></br>
 		<input type="hidden" name= "action" value="add">
 		<input type="submit"/>	
-		</form>
-		<a href="/phone/index.jsp">Go Back</a>		
+		</form> 
+		<a href="/phone/index.jsp">Go Back</a>	 -->	
 		<%
 	} else if (action.equals("add")) {
 		try {
