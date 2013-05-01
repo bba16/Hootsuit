@@ -7,14 +7,9 @@ pageEncoding="utf-8" %>
 <html lang="en">
 <head>
 <link rel="stylesheet" href="hootSuite.css" />
-<script src="http://code.jquery.com/jquery-latest.js"></script>
+
 <title>Phone Book</title>
 </head>
-<script>
-  $(document).ready(function(){
-    $("#entries").validate();
-  });
-  </script>
 <body style="color:black;">
 
 <% 
