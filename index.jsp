@@ -7,8 +7,14 @@ pageEncoding="utf-8" %>
 <html lang="en">
 <head>
 <link rel="stylesheet" href="hootSuite.css" />
+<script src="http://code.jquery.com/jquery-latest.js"></script>
 <title>Phone Book</title>
 </head>
+<script>
+  $(document).ready(function(){
+    $("#entries").validate();
+  });
+  </script>
 <body style="color:black;">
 
 <% 
@@ -21,19 +27,19 @@ pageEncoding="utf-8" %>
 <%
 	} else if (action.equals("req_add")) {
 		%>
-		 <form>
+		 <form id="entries">
 		<div class="well form-inline" style="background-color:rgba(245, 245, 245, 0); margin-bottom:0px;">
 		  <div class="control-group" >  
            
             <div class="controls">  
-              <input style ="margin:0px 10px 10px 80px;width: 468px; color:black; " placeholder="Enter Name" size="140" type="text" name="name"/>  
+              <input style ="margin:0px 10px 10px 80px;width: 468px; color:black; " placeholder="Enter Name" size="140" type="text" name="name" class="required"/>  
               </div> 
 			 <span class="countdown"></span> 
             <div class="control">  
-              <input style="margin:0px 10px 10px 80px;width: 468px;" class="message input-xlarge" placeholder="Enter Phone Number " name="phone" />  
+              <input style="margin:0px 10px 10px 80px;width: 468px;" class="message input-xlarge" placeholder="Enter Phone Number " name="phone"  class="required"/>  
             </div> 	
 			<div class="controls">  
-              <input style ="margin:0px 10px 10px 80px;width: 468px; color:black; " placeholder="Twitter URL" size="140" type="text" name="twitter"/>  
+              <input style ="margin:0px 10px 10px 80px;width: 468px; color:black; " placeholder="Twitter URL" size="140" type="text" name="twitter" class="required"/>  
               </div>			
           </div>
           	<input type="hidden" name= "action" value="add">
